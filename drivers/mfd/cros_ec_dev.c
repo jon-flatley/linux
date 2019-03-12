@@ -89,9 +89,10 @@ static const struct mfd_cell cros_ec_rtc_cells[] = {
 	{ .name = "cros-ec-rtc", },
 };
 
-static const struct mfd_cell cros_usbpd_charger_cells[] = {
+static const struct mfd_cell cros_usbpd_cells[] = {
 	{ .name = "cros-usbpd-charger", },
 	{ .name = "cros-usbpd-logger", },
+	{ .name = "cros-ec-typec" },
 };
 
 static const struct cros_feature_to_cells cros_subdevices[] = {
@@ -107,8 +108,8 @@ static const struct cros_feature_to_cells cros_subdevices[] = {
 	},
 	{
 		.id		= EC_FEATURE_USB_PD,
-		.mfd_cells	= cros_usbpd_charger_cells,
-		.num_cells	= ARRAY_SIZE(cros_usbpd_charger_cells),
+		.mfd_cells	= cros_usbpd_cells,
+		.num_cells	= ARRAY_SIZE(cros_usbpd_cells),
 	},
 };
 

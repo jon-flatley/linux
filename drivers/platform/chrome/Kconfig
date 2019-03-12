@@ -229,6 +229,14 @@ config CROS_EC_SYSFS
 	  To compile this driver as a module, choose M here: the
 	  module will be called cros_ec_sysfs.
 
+config CROS_EC_TYPEC
+	tristate "ChromeOS Embedded Controller USB Type-C class subdriver"
+	depends on TYPEC && CROS_EC_USBPD_NOTIFY
+	default n
+	help
+	  Say Y here to enable the USB Type-C class subdriver for ChromeOS
+	  devices.
+
 config CROS_USBPD_LOGGER
 	tristate "Logging driver for USB PD charger"
 	depends on CHARGER_CROS_USBPD
