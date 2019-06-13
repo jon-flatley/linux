@@ -126,6 +126,15 @@ config CROS_EC_SPI
 	  response time cannot be guaranteed, we support ignoring
 	  'pre-amble' bytes before the response actually starts.
 
+config CROS_EC_USBPD_NOTIFY
+	tristate "ChromeOS USB-C power delivery event notifier"
+	depends on CROS_EC
+	help
+	  If you say Y here, you get support for USB-C PD event notifications
+	  from the ChromeOS EC. On ACPI platorms this driver will bind to the
+	  GOOG0003 ACPI device, and on non-ACPI platform this driver will match
+	  "google,cros-ec-pd-update" in device tree.
+
 config CROS_EC_LPC
 	tristate "ChromeOS Embedded Controller (LPC)"
 	depends on CROS_EC && ACPI && (X86 || COMPILE_TEST)
